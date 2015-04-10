@@ -33,9 +33,10 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public Student update(Student student) {
-		// TODO Auto-generated method stub
-		return null;
+	public Student update(String id, Student student) {
+
+		student.setId(id);
+		return studentRepository.update(student);
 	}
 
 	@Override

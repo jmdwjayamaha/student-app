@@ -12,7 +12,7 @@ import org.virasoft.studentapp.model.Student;
  *
  */
 public interface StudentService {
-	
+
 	/**
 	 * Handle the deletion logic of the student.
 	 * 
@@ -34,11 +34,13 @@ public interface StudentService {
 	/**
 	 * Handle the update logic of the student.
 	 * 
+	 * @param id
+	 *            The MongoDB id of student to be updated.
 	 * @param student
-	 *            The student to be saved.
+	 *            The student to be updated.
 	 * @return The information of the updated student.
 	 */
-	Student update(Student student);
+	Student update(String id, Student student);
 
 	/**
 	 * Process all the students for the front end.

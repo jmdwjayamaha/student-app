@@ -3,7 +3,6 @@
  */
 package org.virasoft.studentapp.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +35,7 @@ public class StudentController {
 
 	@RequestMapping(value = "/students", method = RequestMethod.GET)
 	public List<Student> listStudents(Model model) {
-		
+
 		return studentService.list();
 	}
 
@@ -50,7 +49,7 @@ public class StudentController {
 	public Student updateStudent(@PathVariable("id") String id,
 			@RequestBody Student student) {
 
-		return student;
+		return studentService.update(id, student);
 	}
 
 	@RequestMapping(value = "/student/{id}", method = RequestMethod.DELETE)

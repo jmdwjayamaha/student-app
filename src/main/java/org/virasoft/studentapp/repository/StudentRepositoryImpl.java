@@ -29,7 +29,7 @@ public class StudentRepositoryImpl implements StudentRepository {
 
 	@Override
 	public int delete(String id) {
-		
+
 		Query query = new Query(Criteria.where("_id").is(id));
 		WriteResult result = mongoTemplate.remove(query, Student.class,
 				STUDENT_COLLECTION);
@@ -38,14 +38,16 @@ public class StudentRepositoryImpl implements StudentRepository {
 
 	@Override
 	public Student save(Student student) {
+
 		mongoTemplate.insert(student, STUDENT_COLLECTION);
 		return student;
 	}
 
 	@Override
 	public Student update(Student student) {
-		// TODO Auto-generated method stub
-		return null;
+
+		mongoTemplate.save(student, STUDENT_COLLECTION);
+		return student;
 	}
 
 	@Override

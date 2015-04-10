@@ -37,7 +37,7 @@ public interface StudentRepository {
 	 * Update the specified student in the database.
 	 * 
 	 * @param student
-	 *            The student to be saved.
+	 *            The student to be updated.
 	 * @return The information of the updated student.
 	 */
 	Student update(Student student);

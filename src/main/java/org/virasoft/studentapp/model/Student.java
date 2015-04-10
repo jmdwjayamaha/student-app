@@ -8,7 +8,7 @@ public class Student {
 	// id will be used for storing MongoDB _id
 	@Id
 	private String id;
-	private long studentNumber;
+	private String studentNumber;
 	private String gender;
 	private Date birthDate;
 	private boolean disability;
@@ -34,7 +34,7 @@ public class Student {
 	/**
 	 * @return the studentNumber
 	 */
-	public long getStudentNumber() {
+	public String getStudentNumber() {
 		return studentNumber;
 	}
 
@@ -42,7 +42,7 @@ public class Student {
 	 * @param studentNumber
 	 *            the studentNumber to set
 	 */
-	public void setStudentNumber(long studentNumber) {
+	public void setStudentNumber(String studentNumber) {
 		this.studentNumber = studentNumber;
 	}
 

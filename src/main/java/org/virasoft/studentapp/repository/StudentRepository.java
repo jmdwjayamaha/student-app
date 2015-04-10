@@ -22,7 +22,7 @@ public interface StudentRepository {
 	 *            The student object to be deleted.
 	 * @return The status of the delete operation from the database.
 	 */
-	int delete(Student student);
+	int delete(String id);
 
 	/**
 	 * Save the specified student to the database.

@@ -5,29 +5,41 @@ package org.virasoft.studentapp.repository;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 import org.virasoft.studentapp.model.Student;
 
+import com.mongodb.WriteResult;
+
 /**
- * This repository provides CRUD operations for
+ * Repository implementation for CRUD operations for
  * {@link org.virasoft.studentapp.model.Student} objects.
  * 
  * @author Danushka Wirajith
  *
  */
-@Repository
+@Repository("studentRepository")
 public class StudentRepositoryImpl implements StudentRepository {
 
+	@Autowired
+	private MongoTemplate mongoTemplate;
+
 	@Override
-	public int delete(Student student) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(String id) {
+		
+		Query query = new Query(Criteria.where("_id").is(id));
+		WriteResult result = mongoTemplate.remove(query, Student.class,
+				STUDENT_COLLECTION);
+		return result.getN();
 	}
 
 	@Override
 	public Student save(Student student) {
-		// TODO Auto-generated method stub
-		return null;
+		mongoTemplate.insert(student, STUDENT_COLLECTION);
+		return student;
 	}
 
 	@Override
@@ -38,14 +50,30 @@ public class StudentRepositoryImpl implements StudentRepository {
 
 	@Override
 	public List<Student> list() {
-		// TODO Auto-generated method stub
-		return null;
+
+		return mongoTemplate.findAll(Student.class, STUDENT_COLLECTION);
 	}
 
 	@Override
 	public Student getById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+
+		Query query = new Query(Criteria.where("_id").is(id));
+		return mongoTemplate.findOne(query, Student.class, STUDENT_COLLECTION);
+	}
+
+	/**
+	 * @return the mongoTemplate
+	 */
+	public MongoTemplate getMongoTemplate() {
+		return mongoTemplate;
+	}
+
+	/**
+	 * @param mongoTemplate
+	 *            the mongoTemplate to set
+	 */
+	public void setMongoTemplate(MongoTemplate mongoTemplate) {
+		this.mongoTemplate = mongoTemplate;
 	}
 
 }

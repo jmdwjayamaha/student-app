@@ -9,7 +9,7 @@ public class Student {
 	@Id
 	private String id;
 	private long studentNumber;
-	private boolean gender;
+	private String gender;
 	private Date birthDate;
 	private boolean disability;
 	private String firstName;
@@ -49,7 +49,7 @@ public class Student {
 	/**
 	 * @return the gender
 	 */
-	public boolean isGender() {
+	public String isGender() {
 		return gender;
 	}
 
@@ -57,7 +57,7 @@ public class Student {
 	 * @param gender
 	 *            the gender to set
 	 */
-	public void setGender(boolean gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 

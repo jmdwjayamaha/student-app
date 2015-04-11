@@ -16,7 +16,9 @@ Steps to follow in setting integration test.
 
  2. Configure MongoDB instance details in "servletConfig.xml" file in the location "student-app/src/main/webapp/WEB-INF/config".
        
-
+      i)   host     - Host name of the MongoDB instance.
+      ii)  post     - Hosted port number (Default is: 27017).
+      iii) database - The name of the database to be used (Default value is set to 'student_info').
 	
  3. Navigate to "student-app" directory containing the pom.xml file and run the following command.
       $ mvn clean install

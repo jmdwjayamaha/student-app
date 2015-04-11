@@ -8,7 +8,7 @@ angular.module('studentApp.controllers',[]).controller('StudentListController',f
     $scope.deleteStudent=function(student){
         if(popupService.showPopup('Are you sure you need to delete the student ?')){
         	student.$delete(function(){
-                $window.location.href='';
+                $window.location.href='/studentApp';
             });
         }
     }

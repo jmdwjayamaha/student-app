@@ -1,6 +1,8 @@
 package org.virasoft.studentapp.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 
 public class Student {
@@ -64,8 +66,8 @@ public class Student {
 	/**
 	 * @return the birthDate
 	 */
-	public Date getBirthDate() {
-		return birthDate;
+	public String getBirthDate() {
+		return new SimpleDateFormat("YYYY-MM-dd").format(birthDate);
 	}
 
 	/**

@@ -27,7 +27,7 @@
     <label for="plot" class="col-sm-4 control-label">Birth Date</label>
     <div class="col-sm-8">
         <p class="input-group">
-          <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" minDate="null" ng-model="student.birthDate" is-open="opened" datepicker-options="dateOptions" ng-required="true" placeholder="YYYY-MM-DD" />
+          <input type="text" class="form-control" ng-click="open($event)" datepicker-popup="yyyy-MM-dd" minDate="null" ng-model="student.birthDate" is-open="opened" datepicker-options="dateOptions" ng-required="true" placeholder="YYYY-MM-DD" />
           <span class="input-group-btn">
             <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
           </span>

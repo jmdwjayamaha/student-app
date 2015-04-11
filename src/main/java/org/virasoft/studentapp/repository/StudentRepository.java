@@ -18,8 +18,8 @@ public interface StudentRepository {
 	/**
 	 * Delete the specified from the database.
 	 * 
-	 * @param student
-	 *            The student object to be deleted.
+	 * @param id
+	 *            The id of the student to be deleted.
 	 * @return The status of the delete operation from the database.
 	 */
 	int delete(String id);

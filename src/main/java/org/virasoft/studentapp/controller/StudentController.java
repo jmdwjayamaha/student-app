@@ -39,20 +39,20 @@ public class StudentController {
 		return studentService.list();
 	}
 
-	@RequestMapping(value = "/student/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/students/{id}", method = RequestMethod.GET)
 	public Student getStudent(@PathVariable("id") String id) {
 
 		return studentService.getById(id);
 	}
 
-	@RequestMapping(value = "/student/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/students/{id}", method = RequestMethod.PUT)
 	public Student updateStudent(@PathVariable("id") String id,
 			@RequestBody Student student) {
 
 		return studentService.update(id, student);
 	}
 
-	@RequestMapping(value = "/student/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/students/{id}", method = RequestMethod.DELETE)
 	public int deleteStudent(@PathVariable("id") String id) {
 
 		return studentService.delete(id);

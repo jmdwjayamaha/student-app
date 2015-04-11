@@ -10,10 +10,12 @@
     <mvc:annotation-driven />
     <context:component-scan base-package="org.virasoft.studentapp" />
 
-    <mongo:mongo host="localhost" port="27017" id="mongo" />
+    <context:property-placeholder location="classpath:/config.properties" />
+
+    <mongo:mongo host="${mongodb.host}" port="${mongodb.port}" id="mongo" />
     <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
         <constructor-arg name="mongo" ref="mongo" />
-        <constructor-arg name="databaseName" value="student_info"></constructor-arg>
+        <constructor-arg name="databaseName" value="${mongodb.database}"></constructor-arg>
     </bean>
 
 </beans>

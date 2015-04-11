@@ -2,7 +2,7 @@
  * Created by Danushka Wirajith on 11/04/15.
  */
 
-angular.module('studentApp',['ui.router','ngResource','studentApp.controllers','studentApp.services']);
+angular.module('studentApp',['ui.router','ui.bootstrap','ngResource','studentApp.controllers','studentApp.services']);
 
 angular.module('studentApp').config(function($stateProvider,$httpProvider){
     $stateProvider.state('students',{

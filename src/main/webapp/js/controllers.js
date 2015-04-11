@@ -40,4 +40,14 @@ angular.module('studentApp.controllers',[]).controller('StudentListController',f
     };
 
     $scope.loadStudent();
+
+}).controller('DatePickerController', function ($scope) {
+
+  $scope.open = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.opened = true;
+  };
+
 });

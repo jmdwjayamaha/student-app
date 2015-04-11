@@ -1,4 +1,4 @@
-Product: Single Page Application with REST for Student information handling
+Product: Single Page Web Application with REST for Student information handling.
 
 Pre-requisites:
 

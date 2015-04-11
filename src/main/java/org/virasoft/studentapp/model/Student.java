@@ -49,7 +49,7 @@ public class Student {
 	/**
 	 * @return the gender
 	 */
-	public String isGender() {
+	public String getGender() {
 		return gender;
 	}
 

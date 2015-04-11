@@ -27,7 +27,7 @@ Steps to follow in setting integration test.
       ii)  mongodb.port     - Hosted port number (Default port number is: 27017).
       iii) mongodb.database - The name of the database to be used (Default value is set to 'student_info').
 	
- 3. Navigate to "student-app" directory containing the pom.xml file and run the following command.
+ 3. Navigate to "student-app" directory containing the "pom.xml" file and run the following command.
       $ mvn clean install
 
  4. Deploy the file "studentApp.war" in the location "student-app/target" to JBoss.

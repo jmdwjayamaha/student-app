@@ -16,6 +16,7 @@ Used Technologies/Frameworks:
 Tested Platform: 
 
  - Microsoft WINDOWS V-8
+ - Ubuntu 14.04
 
 Steps to follow in setting integration test.
 
